@@ -12,3 +12,20 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Client {
+  id        Int        @id @default(autoincrement())
+  name      String
+  cpfCnpj   String
+  phone     String
+  contratos Contract[]
+}
+
+model Contract {
+  id       Int      @id @default(autoincrement())
+  date     DateTime
+  value    Float
+  status   String
+  clientId Int
+  client   Client   @relation(fields: [clientId], references: [id])
+}
