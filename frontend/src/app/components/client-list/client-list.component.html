@@ -1,0 +1,14 @@
+<div>
+  <h2>Clientes</h2>
+  <select (change)="filterClientes($event.target.value)">
+    <option value="">Filtrar por Status</option>
+    <option *ngFor="let option of statusOptions" [value]="option">{{ option }}</option>
+  </select>
+
+  <ul>
+    <li *ngFor="let cliente of clientes">
+      {{ cliente.nome }} - {{ cliente.status }}
+      <button (click)="deleteCliente(cliente.id)">Cancelar</button>
+    </li>
+  </ul>
+</div>

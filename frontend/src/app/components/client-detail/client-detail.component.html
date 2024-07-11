@@ -1,0 +1,10 @@
+<div *ngIf="cliente">
+  <h2>Detalhes do Cliente</h2>
+  <p>Nome: {{ client.name }}</p>
+  <p>CPF: {{ client.cpfCnpj }}</p>
+  <p>Celular: {{ client.phone }}</p>
+  <p>Número do Contrato: {{ client.contractNumber }}</p>
+  <p>Data do Contrato: {{ client.contractDate | date }}</p>
+  <p>Valor do Contrato: {{ client.contractValue | currency }}</p>
+  <p>Status: {{ client.status }}</p>
+</div>

@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()">
+  <label for="nome">Nome:</label>
+  <input id="nome" [(ngModel)]="client.name" name="nome" required />
+
+  <label for="cpf">CPF:</label>
+  <input id="cpf" [(ngModel)]="client.cpfCnpj" name="cpf" required />
+
+  <label for="celular">Celular:</label>
+  <input id="celular" [(ngModel)]="client.phone" name="phone" required />
+
+  <label for="numeroContrato">Número do Contrato:</label>
+  <input id="numeroContrato" [(ngModel)]="client.contractNumber" name="contractNumber" required />
+
+  <label for="dataContrato">Data do Contrato:</label>
+  <input id="dataContrato" [(ngModel)]="client.contractDate" name="contractDate" type="date" required />
+
+  <label for="valorContrato">Valor do Contrato:</label>
+  <input id="valorContrato" [(ngModel)]="client.contractValue" name="contractValue" type="number" required />
+
+  <label for="status">Status:</label>
+  <select id="status" [(ngModel)]="client.status" name="status" required>
+    <option value="Em Atraso">Em Atraso</option>
+    <option value="Dentro do Prazo">Dentro do Prazo</option>
+    <option value="Pago">Pago</option>
+    <option value="Cancelado">Cancelado</option>
+  </select>
+
+  <button type="submit">Salvar</button>
+</form>
